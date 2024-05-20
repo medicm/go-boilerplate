@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "6969:6969"
+    volumes:
+      - .:/app
+      - go-cache:/go/pkg/mod
+      - go-build:/root/.cache/go-build
+    command: ["make", "dev"]
+
+volumes:
+  go-cache:
+  go-build:

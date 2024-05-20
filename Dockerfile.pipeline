@@ -1,0 +1,21 @@
+FROM golang:alpine
+
+WORKDIR /app
+
+COPY go.* ./
+
+RUN go mod download
+
+COPY . .
+
+RUN apk update && apk add --no-cache make
+RUN make build -C cmd
+
+WORKDIR /root/
+
+COPY --from=builder /app/cmd/boilerplate .
+COPY --from=builder /app/.env .
+
+EXPOSE 6969
+
+ENTRYPOINT ["./boilerplate"]
