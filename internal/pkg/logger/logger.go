@@ -1,12 +1,13 @@
 package logger
 
 import (
-	"github.com/sirupsen/logrus"
-	"github.com/spf13/viper"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/sirupsen/logrus"
+	"github.com/spf13/viper"
 )
 
 type Logger struct {

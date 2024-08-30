@@ -1,9 +1,10 @@
 package logger
 
 import (
+	"strings"
+
 	"github.com/sirupsen/logrus"
 	"go.uber.org/fx/fxevent"
-	"strings"
 )
 
 type FxLoggerWrapper struct {

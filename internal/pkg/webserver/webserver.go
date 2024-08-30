@@ -1,17 +1,19 @@
 package webserver
 
 import (
+	"context"
+	"errors"
+	"fmt"
+	"net/http"
+	"time"
+
 	"boilerplate/internal/app/handlers"
 	"boilerplate/internal/pkg/config"
 	"boilerplate/internal/pkg/logger"
 	"boilerplate/internal/pkg/middlewares/appcontext"
-	"context"
-	"errors"
-	"fmt"
+
 	"github.com/gin-gonic/gin"
 	"go.uber.org/fx"
-	"net/http"
-	"time"
 )
 
 type Webserver struct {

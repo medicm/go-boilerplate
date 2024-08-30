@@ -1,12 +1,13 @@
 package handlers
 
 import (
+	"sync"
+
 	"boilerplate/internal/app/handlers/health"
 	"boilerplate/internal/app/handlers/notfound"
 	"boilerplate/internal/interfaces"
 	"boilerplate/internal/pkg/middlewares/appcontext"
 	"go.uber.org/fx"
-	"sync"
 )
 
 const (

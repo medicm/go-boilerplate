@@ -2,12 +2,13 @@ package config
 
 import (
 	"fmt"
-	"go.uber.org/fx"
 	"os"
 	"reflect"
 	"strings"
 	"sync"
 	"unicode"
+
+	"go.uber.org/fx"
 
 	"github.com/go-playground/validator/v10"
 	"github.com/joho/godotenv"
@@ -19,7 +20,7 @@ type Config struct {
 	LogLevel       *string  `validate:"oneof=debug info warn error fatal panic"`
 	Port           *int     `validate:"min=1,max=65535"`
 	BasePath       string   `validate:"omitempty"`
-	DbUrl          string   `validate:"required,url"`
+	DbUrl          string   `validate:"required"`
 	TrustedProxies []string `validate:"required"`
 }
 

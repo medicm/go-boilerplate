@@ -1,10 +1,11 @@
 package appcontext
 
 import (
-	"boilerplate/internal/pkg/logger"
 	"fmt"
-	"github.com/gin-gonic/gin"
 	"log"
+
+	"boilerplate/internal/pkg/logger"
+	"github.com/gin-gonic/gin"
 )
 
 type Context struct {
@@ -20,9 +21,9 @@ const ContextName = "AppContext"
 
 func InjectContext() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		log := logger.NewLogger()
+		ctxLog := logger.NewLogger()
 		appContext := &Context{
-			Log: log,
+			Log: ctxLog,
 		}
 		ginContext := &AppContext{
 			Context:    c,
@@ -44,7 +45,7 @@ func GetContext(c *gin.Context) (*Context, error) {
 
 	ctx, ok := val.(*Context)
 	if !ok {
-		return nil, fmt.Errorf("Context has an incorrect type")
+		return nil, fmt.Errorf("context has an incorrect type")
 	}
 
 	return ctx, nil

@@ -1,13 +1,14 @@
 package main
 
 import (
+	"context"
+
 	"boilerplate/internal/app"
 	"boilerplate/internal/app/handlers"
 	"boilerplate/internal/pkg/config"
 	"boilerplate/internal/pkg/logger"
 	"boilerplate/internal/pkg/middlewares/appcontext"
 	"boilerplate/internal/pkg/webserver"
-	"context"
 	"go.uber.org/fx"
 )
 

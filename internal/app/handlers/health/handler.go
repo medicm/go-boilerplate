@@ -1,8 +1,9 @@
 package health
 
 import (
-	"github.com/gin-gonic/gin"
 	"time"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Handler struct{}

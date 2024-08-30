@@ -1,8 +1,9 @@
 package app
 
 import (
-	"boilerplate/internal/pkg/middlewares/appcontext"
 	"context"
+
+	"boilerplate/internal/pkg/middlewares/appcontext"
 	"go.uber.org/dig"
 	"go.uber.org/fx"
 )
