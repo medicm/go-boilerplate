@@ -15,13 +15,15 @@ func GinLoggerMiddleware(logger *Logger) gin.HandlerFunc {
 		status := ctx.Writer.Status()
 
 		fields := logrus.Fields{
-			"method":      ctx.Request.Method,
-			"url":         ctx.Request.URL.String(),
-			"status":      status,
-			"latency":     time.Since(start),
-			"clientIP":    ctx.ClientIP(),
-			"userAgent":   ctx.Request.UserAgent(),
-			"requestSize": ctx.Request.ContentLength,
+			"method":       ctx.Request.Method,
+			"url":          ctx.Request.URL.String(),
+			"status":       status,
+			"latency":      time.Since(start),
+			"clientIP":     ctx.ClientIP(),
+			"protocol":     ctx.Request.Proto,
+			"userAgent":    ctx.Request.UserAgent(),
+			"requestSize":  ctx.Request.ContentLength,
+			"responseSize": ctx.Writer.Size(),
 		}
 
 		switch {

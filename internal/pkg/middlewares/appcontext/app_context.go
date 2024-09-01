@@ -40,7 +40,7 @@ func GetContext(c *gin.Context) (*Context, error) {
 		return nil, fmt.Errorf("appContext not found in gin.Context")
 	}
 
-	// Debugging line
+	// TODO: Remove debug line
 	log.Printf("Type of val: %T\n", val)
 
 	ctx, ok := val.(*Context)
